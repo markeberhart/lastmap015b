@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<!--<script src="./resources/data/world_ver29.js"></script>-->
+<link rel="stylesheet" href="./resources/js/leaflet-0.7.3/leaflet.css">
+<link rel="stylesheet" href="./resources/js/leaflet-0.7.3/plugins/leaflet-label/leaflet.label.css">
+<link rel="stylesheet" href="./resources/js/leaflet-0.7.3/plugins/leaflet-graphicscale/Leaflet.GraphicScale.min.css">
+<link rel="stylesheet" href="./resources/js/lastmap/lastmap.css">
+<link rel="stylesheet" href="./resources/js/lastmap/plugins/lastmap-ui.css">
+<link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+<div id="content">
+<div id="header">
+	<div id="headerLeft">
+        <div id="seals">
+            <div class="seal"><img src="./resources/images/NGA_Seal_75px.png"></div>
+        </div>
+        <div id="headerTitle">
+            <div id="headerTitleCountry"></div>
+            <div id="headerTitleText"></div>
+        </div>
+	</div>
+	<div id="headerRight">
+        <div id="topClassification" class="classification"></div>
+        <div id="buttons">
+        	<!--<div class="button btnResources"><div id="buttonResources" class="buttonIcon"></div><div class="buttonText">Resources</div></div>
+            <div class="buttonHeader buttonClass"><div id="buttonPrint" class="buttonIcon"></div><div class="buttonText">Print</div></div> -->
+        </div>
+
+    </div>
+</div>
+
+<div id="lastmap-ui-menu"></div>
+
+<div id="map"></div>
+
+
+<div id="footer">
+	<div id="footerLeft">
+		<p class="classification"></p>
+		<p id="classifiedBy"></p>
+	</div>
+	<div id="footerRight">
+		<p id="disclaimer"></p>
+		<p id="tracking">
+        <span id="attachmentText"></span>
+        <span id="publishDate"></span>
+        <span id="productNumber"></span>
+        </p>
+	</div>
+</div>
+</div>
+
+
+</body>
+<script src="./resources/js/jquery/jquery-1.11.1.min.js"></script>
+<script src="./resources/js/html2canvas/html2canvas.min.js"></script>
+<script src="./resources/js/html2canvas/html2canvas.svg.min.js"></script>
+<script src="./resources/js/leaflet-0.7.3/leaflet.js"></script>
+<script src="./resources/js/leaflet-0.7.3/plugins/leaflet-label/leaflet.label.js"></script>
+<script src="./resources/js/leaflet-0.7.3/plugins/leaflet-graphicscale/Leaflet.GraphicScale.min.js"></script>
+<script src="./resources/js/leaflet-0.7.3/plugins/proj4-compressed.js"></script>
+<script src="./resources/js/leaflet-0.7.3/plugins/proj4leaflet.js"></script>
+<script src="./resources/js/leaflet-0.7.3/plugins/leaflet-polylinedecorator/leaflet.polylineDecorator.min.js"></script>
+<script src="./resources/js/moment/moment.min.js"></script>-->
+<script src="./resources/js/d3/d3.min.js"></script>
+<script src="./resources/js/d3/queue.v1.min.js"></script>
+<script src="./resources/js/d3/topojson.min.js"></script>
+<script src="./resources/js/geojson-vt/geojson-vt-dev.js"></script>
+<script src="./resources/js/leaflet-0.7.3/L.CanvasTiles4326.js"></script>
+<script src="./resources/js/convertFromEsriJson.js"></script>
+<script src="./resources/js/shapefilejs/shp.min.js"></script>
+
+<!-- EDIT THESE -->
+<script src="./resources/js/lastmap/lastmap.js"></script>
+<script src="./resources/js/lastmap/plugins/lastmap-loaderwindow.js"></script>
+<script src="./resources/js/lastmap/plugins/lastmap-dataloader.js"></script>
+<script src="./resources/js/lastmap/plugins/lastmap-ui.js"></script>
+<script src="./resources/js/map.js"></script>
+<script src="./resources/js/data.js"></script>
+
+</html>

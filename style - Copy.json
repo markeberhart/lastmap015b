@@ -1,0 +1,65 @@
+{
+    "version": 8,
+    "name": "Standard",
+    "constants":{
+        "@sans":"Open Sans Regular, Arial Unicode MS Regular",
+        "@sans_md":"Open Sans Semibold, Arial Unicode MS Bold",
+        "@sans_bd":"Open Sans Bold, Arial Unicode MS Bold",
+        "@land-color":"rgba(229,225,219,1)",
+        "@country-primary-color":"rgba(255,255,255,1)",
+        "@country-secondary-color":"rgba(244,238,228,1)",
+        "@boundary-admin0-color":"rgba(130,130,130,1)",
+        "@boundary-admin0-width":3
+    }
+    "metadata":{},
+    "center": [-78.9749,38.7736],
+    "zoom":5,
+    "sources": {
+        "basemap-data": {
+            "type":"topojson",
+            "url":"world_ver29.json",
+            "minzoom":5,
+            "maxzoom":14
+        }
+    },
+    "layers": [
+        {
+            "id": "layer-countries",
+            "source": "basemap-data",
+            "source-layer": "countries",
+            "metadata":{
+                "key-name":"Country",
+                "display-in-key":"true"
+            },
+            "minzoom":8,
+            "maxzoom":10,
+            "type": "fill",
+            "filter": [],
+            "paint": {
+                "fill-antialias":"true",
+                "visibility":"visible",
+                "fill-opacity":1,
+                "fill-color":"@land"
+            }
+        },
+        {
+            "id": "layer-boundaries",
+            "source": "basemap-data",
+            "source-layer": "boundaries",
+            "metadata":{
+                "key-name":"Boundary",
+                "display-in-key":"true"
+            },
+            "minzoom":8,
+            "maxzoom":10,
+            "type": "line",
+            "filter": [],
+            "paint": {
+                "visibility":"visible",
+                "line-opacity":1,
+                "line-color":"@boundary-admin0-color",
+                "line-width":"@boundary-admin0-width"
+            }
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "version": 8,
+    "name": "LastMap",
+    "constants":{
+        "@sans": "Open Sans Regular, Arial Unicode MS Regular",
+        "@sans_md": "Open Sans Semibold, Arial Unicode MS Bold",
+        "@sans_bd": "Open Sans Bold, Arial Unicode MS Bold",
+        "@water": "#a0cfdf",
+        "@waterborder": "#a0cfdf",
+        "@park": "#d2edae",
+        "@building": "#d6d6d6",
+        "@label": "#666",
+        "@label-halo": "rgba(255,255,255,0.75)",
+        "@road-major": "#fff",
+        "@road-minor": "#efefef"
+    }
+    "metadata":{},
+    "center": [-73.9749,40.7736],
+    "zoom":5,
+    "sources": {
+        "basemap-topojson": {
+            "type":"topojson",
+            "url":"world_ver29.json",
+            "minzoom":5,
+            "maxzoom":14
+        }
+    },
+    "layers": [
+      {
+        "id": "water",
+        "source": "basemap-topojson",
+        "source-layer": "water",
+        "minzoom":8,
+        "maxzoom":10,
+        "metadata":{},
+        "type": "fill",
+        "filter": ["all", ["==", "$type", "LineString"], ["in", "class", "river", "canal"]],
+        "paint": {
+            "fill-antialias":"true",
+            "visibility":"visible",
+            "fill-opacity":0.5,
+            "fill-color":"@water",
+            "fill-outline-color":"@waterborder",
+            "fill-outline-width":4,
+            
+        }
+      }
+    ]
+}

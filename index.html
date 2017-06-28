@@ -1,0 +1,82 @@
+<html>
+<header>
+    <title>LastMap ver0.10</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./resources/js/leaflet-1.0.2/leaflet.css">
+    <style>
+
+    #map {
+        width:auto;
+        height:100%;
+        /*background-color: rgb(220,241,252);
+        margin-right:250px;*/
+        margin-right:0px;
+    }
+
+    </style>
+</header>
+<body>
+
+The Map
+<div id="map"></div>
+
+</body>
+
+<!-- DataGobbler & lastmap Files -->
+<script src="./resources/js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="./resources/js/d3-4.4.3/d3.min.js"></script>
+<script src="./resources/js/d3-4.4.3/d3-geo-projection.min.js"></script>
+<script src="./resources/js/leaflet-1.0.2/leaflet-src.js"></script>
+<script src="./resources/js/leaflet-1.0.2/proj4.js"></script>
+<script src="./resources/js/leaflet-1.0.2/proj4leaflet.js"></script>
+<!--<script src="./resources/js/leaflet-1.0.2/Leaflet.VectorGrid.bundled.1.js"></script>-->
+<script src="./resources/js/leaflet-1.0.2/geojson-vt-2.2.0.js"></script>
+
+
+<!-- DataGobbler Files -->
+<script src="./resources/js/moment/moment.min.js"></script>
+<script src="./resources/js/shapefilejs/shp.min.js"></script>
+<script src="./resources/js/d3-4.4.3/topojson-2.2.0.min.js"></script>
+
+<script src="./resources/js/convertFromEsriJson.js"></script>
+<script src="./resources/js/datagobbler-0.1.0/datagobbler-0.1.0.js"></script>
+<script src="lastmap-0.15.js"></script>
+
+<script>
+    //console.log("LastMap ver0.10",lastmap);
+    var mapOptions = {
+        library:"leaflet", //Supports "leaflet" or "d3"
+        projection:"EPSG3857", //Supports "EPSG3857","EPSG4326" for leaflet OR "d3.geo.mercator","d3.geo.equirectangular" for d3
+        styleUrl:"style.json",
+        divID:"map",
+        width:800,
+        height:200,
+        loadedCallbackFunction:onMapLoaded,
+        loadingCallbackFunction:onMapLoading
+    }
+
+    var _map = lastmap.createMap(mapOptions);
+    //console.log("index.html",this);
+
+
+
+function onMapLoading(data){
+    //console.log("onDataLoading...",data);
+}
+
+function onMapLoaded(data){
+    console.log("onMapLoaded called.",data);
+
+    d3.json("./resources/data/cities.geojson", function(error,cities) {
+        if(error){
+            //console.log(error,"JSON error");
+        }else{
+            console.log("cities",data,cities);
+            //L.geoJSON(cities.features).addTo(data.map);
+        }
+    });
+}
+
+</script>
+</html>
